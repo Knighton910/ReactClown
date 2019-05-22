@@ -1,0 +1,167 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/kelkni/.nvm/v0.10.35/bin/node',
+1 verbose cli   '/Users/kelkni/.nvm/v0.10.35/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save-dev',
+1 verbose cli   '@babel/core@7',
+1 verbose cli   '@babel/cli@7' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 warn package.json ReactClown@1.0.0 No description
+5 warn package.json ReactClown@1.0.0 No repository field.
+6 warn package.json ReactClown@1.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ '@babel/core@7', null ]
+9 verbose cache add name=undefined spec="@babel/core@7" args=["@babel/core@7",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: '@babel/core@7',
+10 verbose parsed url   path: '@babel/core@7',
+10 verbose parsed url   href: '@babel/core@7' }
+11 verbose cache add [ '@babel/cli@7', null ]
+12 verbose cache add name=undefined spec="@babel/cli@7" args=["@babel/cli@7",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: '@babel/cli@7',
+13 verbose parsed url   path: '@babel/cli@7',
+13 verbose parsed url   href: '@babel/cli@7' }
+14 verbose cache add name="" spec="babel/core@7" args=["","babel/core@7"]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: 'babel/core@7',
+15 verbose parsed url   path: 'babel/core@7',
+15 verbose parsed url   href: 'babel/core@7' }
+16 verbose cache add name="" spec="babel/cli@7" args=["","babel/cli@7"]
+17 verbose parsed url { protocol: null,
+17 verbose parsed url   slashes: null,
+17 verbose parsed url   auth: null,
+17 verbose parsed url   host: null,
+17 verbose parsed url   port: null,
+17 verbose parsed url   hostname: null,
+17 verbose parsed url   hash: null,
+17 verbose parsed url   search: null,
+17 verbose parsed url   query: null,
+17 verbose parsed url   pathname: 'babel/cli@7',
+17 verbose parsed url   path: 'babel/cli@7',
+17 verbose parsed url   href: 'babel/cli@7' }
+18 verbose cache add name="babel/core" spec="7" args=["babel/core","7"]
+19 verbose parsed url { protocol: null,
+19 verbose parsed url   slashes: null,
+19 verbose parsed url   auth: null,
+19 verbose parsed url   host: null,
+19 verbose parsed url   port: null,
+19 verbose parsed url   hostname: null,
+19 verbose parsed url   hash: null,
+19 verbose parsed url   search: null,
+19 verbose parsed url   query: null,
+19 verbose parsed url   pathname: '7',
+19 verbose parsed url   path: '7',
+19 verbose parsed url   href: '7' }
+20 verbose addNamed [ 'babel/core', '7' ]
+21 verbose addNamed [ null, '>=7.0.0-0 <8.0.0-0' ]
+22 verbose cache add name="babel/cli" spec="7" args=["babel/cli","7"]
+23 verbose parsed url { protocol: null,
+23 verbose parsed url   slashes: null,
+23 verbose parsed url   auth: null,
+23 verbose parsed url   host: null,
+23 verbose parsed url   port: null,
+23 verbose parsed url   hostname: null,
+23 verbose parsed url   hash: null,
+23 verbose parsed url   search: null,
+23 verbose parsed url   query: null,
+23 verbose parsed url   pathname: '7',
+23 verbose parsed url   path: '7',
+23 verbose parsed url   href: '7' }
+24 verbose addNamed [ 'babel/cli', '7' ]
+25 verbose addNamed [ null, '>=7.0.0-0 <8.0.0-0' ]
+26 silly lockFile 03ded0e9-babel-core-7 babel/core@7
+27 verbose lock babel/core@7 /Users/kelkni/.npm/03ded0e9-babel-core-7.lock
+28 silly lockFile c2ff83e7-babel-cli-7 babel/cli@7
+29 verbose lock babel/cli@7 /Users/kelkni/.npm/c2ff83e7-babel-cli-7.lock
+30 silly addNameRange { name: 'babel/core',
+30 silly addNameRange   range: '>=7.0.0-0 <8.0.0-0',
+30 silly addNameRange   hasData: false }
+31 silly addNameRange { name: 'babel/cli',
+31 silly addNameRange   range: '>=7.0.0-0 <8.0.0-0',
+31 silly addNameRange   hasData: false }
+32 verbose request where is /babel/core
+33 verbose request registry https://registry.npmjs.org/
+34 verbose request id 98144a16f915f2bc
+35 verbose url raw /babel/core
+36 verbose url resolving [ 'https://registry.npmjs.org/', './babel/core' ]
+37 verbose url resolved https://registry.npmjs.org/babel/core
+38 verbose request where is https://registry.npmjs.org/babel/core
+39 info trying registry request attempt 1 at 21:11:37
+40 http GET https://registry.npmjs.org/babel/core
+41 verbose request where is /babel/cli
+42 verbose request registry https://registry.npmjs.org/
+43 verbose url raw /babel/cli
+44 verbose url resolving [ 'https://registry.npmjs.org/', './babel/cli' ]
+45 verbose url resolved https://registry.npmjs.org/babel/cli
+46 verbose request where is https://registry.npmjs.org/babel/cli
+47 info trying registry request attempt 1 at 21:11:37
+48 http GET https://registry.npmjs.org/babel/cli
+49 http 405 https://registry.npmjs.org/babel/core
+50 silly registry.get cb [ 405,
+50 silly registry.get   { date: 'Wed, 22 May 2019 04:11:37 GMT',
+50 silly registry.get     'content-type': 'application/json',
+50 silly registry.get     'content-length': '63',
+50 silly registry.get     connection: 'keep-alive',
+50 silly registry.get     'set-cookie': [ '__cfduid=dfd320940c2a1334c7de46a0fa393b0251558498297; expires=Thu, 21-May-20 04:11:37 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+50 silly registry.get     'cf-ray': '4dabf2786ec7d372-LAX',
+50 silly registry.get     allow: 'PUT',
+50 silly registry.get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+50 silly registry.get     vary: 'Accept-Encoding',
+50 silly registry.get     server: 'cloudflare' } ]
+51 http 405 https://registry.npmjs.org/babel/cli
+52 silly registry.get cb [ 405,
+52 silly registry.get   { date: 'Wed, 22 May 2019 04:11:37 GMT',
+52 silly registry.get     'content-type': 'application/json',
+52 silly registry.get     'content-length': '63',
+52 silly registry.get     connection: 'keep-alive',
+52 silly registry.get     'set-cookie': [ '__cfduid=d722b2d6b926ff7634cd846f92d1d610c1558498297; expires=Thu, 21-May-20 04:11:37 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+52 silly registry.get     'cf-ray': '4dabf2786a8ed362-LAX',
+52 silly registry.get     allow: 'PUT',
+52 silly registry.get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+52 silly registry.get     vary: 'Accept-Encoding',
+52 silly registry.get     server: 'cloudflare' } ]
+53 silly lockFile 03ded0e9-babel-core-7 babel/core@7
+54 silly lockFile 03ded0e9-babel-core-7 babel/core@7
+55 silly lockFile c2ff83e7-babel-cli-7 babel/cli@7
+56 silly lockFile c2ff83e7-babel-cli-7 babel/cli@7
+57 error Error: Method Not Allowed
+57 error     at errorResponse (/Users/kelkni/.nvm/v0.10.35/lib/node_modules/npm/lib/cache/add-named.js:260:10)
+57 error     at /Users/kelkni/.nvm/v0.10.35/lib/node_modules/npm/lib/cache/add-named.js:203:12
+57 error     at saved (/Users/kelkni/.nvm/v0.10.35/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:167:7)
+57 error     at Object.oncomplete (fs.js:108:15)
+58 error If you need help, you may report this *entire* log,
+58 error including the npm and node versions, at:
+58 error     <http://github.com/npm/npm/issues>
+59 error System Darwin 17.7.0
+60 error command "/Users/kelkni/.nvm/v0.10.35/bin/node" "/Users/kelkni/.nvm/v0.10.35/bin/npm" "install" "--save-dev" "@babel/core@7" "@babel/cli@7"
+61 error cwd /Users/kelkni/Desktop/Node-WorkBench/ReactClown
+62 error node -v v0.10.35
+63 error npm -v 1.4.28
+64 error code E405
+65 verbose exit [ 1, true ]
