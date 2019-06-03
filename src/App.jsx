@@ -1,4 +1,4 @@
-const issues = [
+const initialIssues = [
     {
         id: 1, status: 'New', owner: 'Ravan', effort: 5,
         created: new Date('2019-08-15'), due: undefined,
@@ -38,22 +38,42 @@ class IssueRow extends React.Component {
 }
 
 class IssueTable extends React.Component {
+
+    constructor() {
+        super();
+        this.state = { issues: [] }
+    }
+
+    // life cycle method
+    componentDidMount() {
+        this.loadData();
+    }
+
+    loadData() {
+        setTimeout(() => {
+            this.setState({ issues: initialIssues })
+        }, 500)
+    }
+
     render() {
-        const issueRows = issues.map(issue => <IssueRow key={issue.id} issue={issue}/>)
+        const issueRows = this.state.issues.map(issue =>
+            <IssueRow key={issue.id} issue={issue}/>
+            )
 
         return (
             <table className="bordered-table">
                 <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Status</th>
-                    <th>Owner</th>
-                    <th>Created</th>
-                    <th>Effort</th>
-                    <th>Due Date</th>
-                    <th>Title</th>
-                </tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Status</th>
+                        <th>Owner</th>
+                        <th>Created</th>
+                        <th>Effort</th>
+                        <th>Due Date</th>
+                        <th>Title</th>
+                    </tr>
                 </thead>
+
                 <tbody>
                     {issueRows}
                 </tbody>
