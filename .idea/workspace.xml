@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5be585e7-e76f-4682-b3d4-f6a8ec36e48c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
     </list>
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="1681">
+              <caret line="93" column="25" lean-forward="true" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -39,6 +38,9 @@
     <findStrings>
       <find>key</find>
       <find>issueRows</find>
+      <find>setState</find>
+      <find>issue</find>
+      <find>IssueRow</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -64,10 +66,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1905" />
-    <option name="y" value="-239" />
-    <option name="width" value="1758" />
-    <option name="height" value="1044" />
+    <option name="x" value="-1854" />
+    <option name="y" value="-235" />
+    <option name="width" value="1506" />
+    <option name="height" value="1023" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -144,18 +146,18 @@
       <workItem from="1558816998611" duration="2175000" />
       <workItem from="1559072357307" duration="673000" />
       <workItem from="1559505053715" duration="827000" />
-      <workItem from="1559510502792" duration="5714000" />
+      <workItem from="1559510502792" duration="9488000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29878000" />
+    <option name="totallyTimeSpent" value="33652000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1905" y="-239" width="1758" height="1044" extended-state="0" />
+    <frame x="-1854" y="-235" width="1506" height="1023" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12798634" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1494024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -238,8 +240,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="1681">
+          <caret line="93" column="25" lean-forward="true" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
         </state>
       </provider>
     </entry>

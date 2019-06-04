@@ -18,6 +18,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+/*** @desc : Hard-coded arrays */
 var initialIssues = [{
   id: 1,
   status: 'New',
@@ -35,6 +36,12 @@ var initialIssues = [{
   due: new Date('2018-08-30'),
   title: 'Missing bottom boder on panel'
 }];
+var sampleIssue = {
+  status: 'New',
+  owner: 'Pieta',
+  title: 'Completion date should be optional'
+};
+/*** @desc : class definitions */
 
 var IssueFilter =
 /*#__PURE__*/
@@ -78,6 +85,10 @@ function (_React$Component2) {
 
   return IssueRow;
 }(React.Component);
+/*** @desc:
+ * IssueTable is a huge/monolitic stateful component, which should be in its on file @todo
+ * Automatically adds the sample issue to the list of issues after the page is loaded */
+
 
 var IssueTable =
 /*#__PURE__*/
@@ -93,6 +104,9 @@ function (_React$Component3) {
     _this.state = {
       issues: []
     };
+    setTimeout(function () {
+      _this.createIssue(sampleIssue);
+    }, 2000);
     return _this;
   } // life cycle method
 
@@ -112,6 +126,17 @@ function (_React$Component3) {
           issues: initialIssues
         });
       }, 500);
+    }
+  }, {
+    key: "createIssue",
+    value: function createIssue(issue) {
+      issue.id = this.state.issues.length + 1;
+      issue.created = new Date();
+      var newIssueList = this.state.issues.slice();
+      newIssueList.push(issue);
+      this.setState({
+        issues: newIssueList
+      });
     }
   }, {
     key: "render",

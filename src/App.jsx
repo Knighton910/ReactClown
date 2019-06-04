@@ -1,3 +1,4 @@
+/*** @desc : Hard-coded arrays */
 const initialIssues = [
     {
         id: 1, status: 'New', owner: 'Ravan', effort: 5,
@@ -11,7 +12,12 @@ const initialIssues = [
     }
 ]
 
+const sampleIssue = {
+    status: 'New', owner: 'Pieta',
+    title: 'Completion date should be optional'
+};
 
+/*** @desc : class definitions */
 class IssueFilter extends React.Component {
     render() {
         return (
@@ -37,11 +43,17 @@ class IssueRow extends React.Component {
     }
 }
 
+/*** @desc:
+ * IssueTable is a huge/monolitic stateful component, which should be in its on file @todo
+ * Automatically adds the sample issue to the list of issues after the page is loaded */
 class IssueTable extends React.Component {
 
     constructor() {
         super();
-        this.state = { issues: [] }
+        this.state = { issues: [] };
+        setTimeout(() => {
+            this.createIssue(sampleIssue)
+        }, 2000)
     }
 
     // life cycle method
@@ -53,6 +65,14 @@ class IssueTable extends React.Component {
         setTimeout(() => {
             this.setState({ issues: initialIssues })
         }, 500)
+    }
+
+    createIssue(issue) {
+        issue.id = this.state.issues.length + 1;
+        issue.created = new Date();
+        const newIssueList = this.state.issues.slice();
+        newIssueList.push(issue);
+        this.setState({ issues: newIssueList });
     }
 
     render() {
