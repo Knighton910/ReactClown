@@ -18,7 +18,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-/*** @desc : Hard-coded arrays */
+/*** @desc : Hard-coded arrays:
+ *  includes -[ initialIssues and sampleIssue ]- */
 var initialIssues = [{
   id: 1,
   status: 'New',
@@ -41,7 +42,10 @@ var sampleIssue = {
   owner: 'Pieta',
   title: 'Completion date should be optional'
 };
-/*** @desc : class definitions */
+/*** @desc:
+ * class definitions: includes -[
+ * IssueFilter, IssueRow, IssueTable, IssueAdd and IssueList
+ * components]-  */
 
 var IssueFilter =
 /*#__PURE__*/
@@ -96,52 +100,15 @@ function (_React$Component3) {
   _inherits(IssueTable, _React$Component3);
 
   function IssueTable() {
-    var _this;
-
     _classCallCheck(this, IssueTable);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(IssueTable).call(this));
-    _this.state = {
-      issues: []
-    };
-    setTimeout(function () {
-      _this.createIssue(sampleIssue);
-    }, 2000);
-    return _this;
-  } // life cycle method
-
+    return _possibleConstructorReturn(this, _getPrototypeOf(IssueTable).apply(this, arguments));
+  }
 
   _createClass(IssueTable, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.loadData();
-    }
-  }, {
-    key: "loadData",
-    value: function loadData() {
-      var _this2 = this;
-
-      setTimeout(function () {
-        _this2.setState({
-          issues: initialIssues
-        });
-      }, 500);
-    }
-  }, {
-    key: "createIssue",
-    value: function createIssue(issue) {
-      issue.id = this.state.issues.length + 1;
-      issue.created = new Date();
-      var newIssueList = this.state.issues.slice();
-      newIssueList.push(issue);
-      this.setState({
-        issues: newIssueList
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
-      var issueRows = this.state.issues.map(function (issue) {
+      var issueRows = this.props.issues.map(function (issue) {
         return React.createElement(IssueRow, {
           key: issue.id,
           issue: issue
@@ -162,9 +129,15 @@ function (_React$Component4) {
   _inherits(IssueAdd, _React$Component4);
 
   function IssueAdd() {
+    var _this;
+
     _classCallCheck(this, IssueAdd);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(IssueAdd).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(IssueAdd).call(this));
+    setTimeout(function () {
+      _this.props.createIssue(sampleIssue);
+    }, 2000);
+    return _this;
   }
 
   _createClass(IssueAdd, [{
@@ -183,15 +156,56 @@ function (_React$Component5) {
   _inherits(IssueList, _React$Component5);
 
   function IssueList() {
+    var _this2;
+
     _classCallCheck(this, IssueList);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(IssueList).apply(this, arguments));
-  }
+    _this2 = _possibleConstructorReturn(this, _getPrototypeOf(IssueList).call(this));
+    /*** @desc: here is the State Storage structure*/
+
+    _this2.state = {
+      issues: []
+    };
+    _this2.createIssue = _this2.createIssue.bind(_assertThisInitialized(_this2));
+    return _this2;
+  } // ♽ life cycle method ♽
+
 
   _createClass(IssueList, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.loadData();
+    }
+  }, {
+    key: "loadData",
+    value: function loadData() {
+      var _this3 = this;
+
+      setTimeout(function () {
+        // taking issues the empty Arr and updating it with the initialIssue Arr
+        _this3.setState({
+          issues: initialIssues
+        });
+      }, 500);
+    }
+  }, {
+    key: "createIssue",
+    value: function createIssue(issue) {
+      issue.id = this.state.issues.length + 1;
+      issue.created = new Date();
+      var newIssueList = this.state.issues.slice(); // adding the newly minted issue to the (issues) pool
+
+      newIssueList.push(issue);
+      this.setState({
+        issues: newIssueList
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return React.createElement(React.Fragment, null, React.createElement("h1", null, "Issue Tracker"), React.createElement(IssueFilter, null), React.createElement("hr", null), React.createElement(IssueTable, null), React.createElement("hr", null), React.createElement(IssueAdd, null));
+      return React.createElement(React.Fragment, null, React.createElement("h1", null, "Issue Tracker"), React.createElement(IssueFilter, null), React.createElement("hr", null), React.createElement(IssueTable, null), React.createElement("hr", null), "/* (bind)giving IssueAdd access to the IssueList scope */", React.createElement(IssueAdd, {
+        createIssue: this.createIssue.bind(this)
+      }));
     }
   }]);
 

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5be585e7-e76f-4682-b3d4-f6a8ec36e48c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
     </list>
@@ -19,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1681">
-              <caret line="93" column="25" lean-forward="true" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
+            <state relative-caret-position="659">
+              <caret line="138" column="56" selection-start-line="138" selection-start-column="56" selection-end-line="138" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -37,10 +38,15 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>key</find>
-      <find>issueRows</find>
       <find>setState</find>
       <find>issue</find>
       <find>IssueRow</find>
+      <find>issueRows</find>
+      <find>loadData</find>
+      <find>createIssue</find>
+      <find>sampleIssue</find>
+      <find>IssueTable</find>
+      <find>issues</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -66,10 +72,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1854" />
-    <option name="y" value="-235" />
-    <option name="width" value="1506" />
-    <option name="height" value="1023" />
+    <option name="x" value="-1080" />
+    <option name="y" value="-481" />
+    <option name="width" value="1080" />
+    <option name="height" value="1324" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -146,18 +152,19 @@
       <workItem from="1558816998611" duration="2175000" />
       <workItem from="1559072357307" duration="673000" />
       <workItem from="1559505053715" duration="827000" />
-      <workItem from="1559510502792" duration="9488000" />
+      <workItem from="1559510502792" duration="17225000" />
+      <workItem from="1559873338204" duration="10682000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33652000" />
+    <option name="totallyTimeSpent" value="52071000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1854" y="-235" width="1506" height="1023" extended-state="0" />
+    <frame x="-1080" y="-481" width="1080" height="1324" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1494024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12592593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -240,8 +247,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1681">
-          <caret line="93" column="25" lean-forward="true" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
+        <state relative-caret-position="659">
+          <caret line="138" column="56" selection-start-line="138" selection-start-column="56" selection-end-line="138" selection-end-column="56" />
         </state>
       </provider>
     </entry>
