@@ -18,14 +18,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-/*** @desc : Hard-coded arrays:
- *  includes -[ initialIssues and sampleIssue ]- */
 var initialIssues = [{
   id: 1,
   status: 'New',
   owner: 'Ravan',
   effort: 5,
-  created: new Date('2019-08-15'),
+  created: new Date('2018-08-15'),
   due: undefined,
   title: 'Error in console when clicking Add'
 }, {
@@ -33,19 +31,10 @@ var initialIssues = [{
   status: 'Assigned',
   owner: 'Eddie',
   effort: 14,
-  created: new Date('2018-08-12'),
+  created: new Date('2018-08-16'),
   due: new Date('2018-08-30'),
-  title: 'Missing bottom boder on panel'
+  title: 'Missing bottom border on panel'
 }];
-var sampleIssue = {
-  status: 'New',
-  owner: 'Pieta',
-  title: 'Completion date should be optional'
-};
-/*** @desc:
- * class definitions: includes -[
- * IssueFilter, IssueRow, IssueTable, IssueAdd and IssueList
- * components]-  */
 
 var IssueFilter =
 /*#__PURE__*/
@@ -83,16 +72,12 @@ function (_React$Component2) {
     key: "render",
     value: function render() {
       var issue = this.props.issue;
-      return React.createElement("tr", null, React.createElement("td", null, issue.id), React.createElement("td", null, issue.status), React.createElement("td", null, issue.owner), React.createElement("td", null, issue.created.toDateString()), React.createElement("td", null, issue.effort), React.createElement("td", null, issue.due ? issue.due.toDateString() : ""), React.createElement("td", null, issue.title));
+      return React.createElement("tr", null, React.createElement("td", null, issue.id), React.createElement("td", null, issue.status), React.createElement("td", null, issue.owner), React.createElement("td", null, issue.created.toDateString()), React.createElement("td", null, issue.effort), React.createElement("td", null, issue.due ? issue.due.toDateString() : ''), React.createElement("td", null, issue.title));
     }
   }]);
 
   return IssueRow;
 }(React.Component);
-/*** @desc:
- * IssueTable is a huge/monolitic stateful component, which should be in its on file @todo
- * Automatically adds the sample issue to the list of issues after the page is loaded */
-
 
 var IssueTable =
 /*#__PURE__*/
@@ -134,16 +119,39 @@ function (_React$Component4) {
     _classCallCheck(this, IssueAdd);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(IssueAdd).call(this));
-    setTimeout(function () {
-      _this.props.createIssue(sampleIssue);
-    }, 2000);
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(IssueAdd, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var form = document.forms.issueAdd;
+      var issue = {
+        owner: form.owner.value,
+        title: form.title.value,
+        status: "New"
+      };
+      this.props.createIssue(issue);
+      form.owner.value = "";
+      form.title.value = "";
+    }
+  }, {
     key: "render",
     value: function render() {
-      return React.createElement("div", null, "This is a placeholder for a form to add an issue.");
+      return React.createElement("form", {
+        name: "issueAdd",
+        onSubmit: this.handleSubmit
+      }, React.createElement("input", {
+        type: "text",
+        name: "owner",
+        placeholder: "Owner"
+      }), React.createElement("input", {
+        type: "text",
+        name: "title",
+        placeholder: "Title"
+      }), React.createElement("button", null, "Add"));
     }
   }]);
 
@@ -161,15 +169,12 @@ function (_React$Component5) {
     _classCallCheck(this, IssueList);
 
     _this2 = _possibleConstructorReturn(this, _getPrototypeOf(IssueList).call(this));
-    /*** @desc: here is the State Storage structure*/
-
     _this2.state = {
       issues: []
     };
     _this2.createIssue = _this2.createIssue.bind(_assertThisInitialized(_this2));
     return _this2;
-  } // ♽ life cycle method ♽
-
+  }
 
   _createClass(IssueList, [{
     key: "componentDidMount",
@@ -182,7 +187,6 @@ function (_React$Component5) {
       var _this3 = this;
 
       setTimeout(function () {
-        // taking issues the empty Arr and updating it with the initialIssue Arr
         _this3.setState({
           issues: initialIssues
         });
@@ -193,8 +197,7 @@ function (_React$Component5) {
     value: function createIssue(issue) {
       issue.id = this.state.issues.length + 1;
       issue.created = new Date();
-      var newIssueList = this.state.issues.slice(); // adding the newly minted issue to the (issues) pool
-
+      var newIssueList = this.state.issues.slice();
       newIssueList.push(issue);
       this.setState({
         issues: newIssueList
@@ -203,8 +206,10 @@ function (_React$Component5) {
   }, {
     key: "render",
     value: function render() {
-      return React.createElement(React.Fragment, null, React.createElement("h1", null, "Issue Tracker"), React.createElement(IssueFilter, null), React.createElement("hr", null), React.createElement(IssueTable, null), React.createElement("hr", null), "/* (bind)giving IssueAdd access to the IssueList scope */", React.createElement(IssueAdd, {
-        createIssue: this.createIssue.bind(this)
+      return React.createElement(React.Fragment, null, React.createElement("h1", null, "Issue Tracker"), React.createElement(IssueFilter, null), React.createElement("hr", null), React.createElement(IssueTable, {
+        issues: this.state.issues
+      }), React.createElement("hr", null), React.createElement(IssueAdd, {
+        createIssue: this.createIssue
       }));
     }
   }]);
