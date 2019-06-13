@@ -57,61 +57,27 @@ function (_React$Component) {
   return IssueFilter;
 }(React.Component);
 
-var IssueRow =
-/*#__PURE__*/
-function (_React$Component2) {
-  _inherits(IssueRow, _React$Component2);
+function IssueRow(props) {
+  var issue = props.issue;
+  return React.createElement("tr", null, React.createElement("td", null, issue.id), React.createElement("td", null, issue.status), React.createElement("td", null, issue.owner), React.createElement("td", null, issue.created.toDateString()), React.createElement("td", null, issue.effort), React.createElement("td", null, issue.due ? issue.due.toDateString() : ''), React.createElement("td", null, issue.title));
+}
 
-  function IssueRow() {
-    _classCallCheck(this, IssueRow);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(IssueRow).apply(this, arguments));
-  }
-
-  _createClass(IssueRow, [{
-    key: "render",
-    value: function render() {
-      var issue = this.props.issue;
-      return React.createElement("tr", null, React.createElement("td", null, issue.id), React.createElement("td", null, issue.status), React.createElement("td", null, issue.owner), React.createElement("td", null, issue.created.toDateString()), React.createElement("td", null, issue.effort), React.createElement("td", null, issue.due ? issue.due.toDateString() : ''), React.createElement("td", null, issue.title));
-    }
-  }]);
-
-  return IssueRow;
-}(React.Component);
-
-var IssueTable =
-/*#__PURE__*/
-function (_React$Component3) {
-  _inherits(IssueTable, _React$Component3);
-
-  function IssueTable() {
-    _classCallCheck(this, IssueTable);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(IssueTable).apply(this, arguments));
-  }
-
-  _createClass(IssueTable, [{
-    key: "render",
-    value: function render() {
-      var issueRows = this.props.issues.map(function (issue) {
-        return React.createElement(IssueRow, {
-          key: issue.id,
-          issue: issue
-        });
-      });
-      return React.createElement("table", {
-        className: "bordered-table"
-      }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "ID"), React.createElement("th", null, "Status"), React.createElement("th", null, "Owner"), React.createElement("th", null, "Created"), React.createElement("th", null, "Effort"), React.createElement("th", null, "Due Date"), React.createElement("th", null, "Title"))), React.createElement("tbody", null, issueRows));
-    }
-  }]);
-
-  return IssueTable;
-}(React.Component);
+function IssueTable(props) {
+  var issueRows = props.issues.map(function (issue) {
+    return React.createElement(IssueRow, {
+      key: issue.id,
+      issue: issue
+    });
+  });
+  return React.createElement("table", {
+    className: "bordered-table"
+  }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, "ID"), React.createElement("th", null, "Status"), React.createElement("th", null, "Owner"), React.createElement("th", null, "Created"), React.createElement("th", null, "Effort"), React.createElement("th", null, "Due Date"), React.createElement("th", null, "Title"))), React.createElement("tbody", null, issueRows));
+}
 
 var IssueAdd =
 /*#__PURE__*/
-function (_React$Component4) {
-  _inherits(IssueAdd, _React$Component4);
+function (_React$Component2) {
+  _inherits(IssueAdd, _React$Component2);
 
   function IssueAdd() {
     var _this;
@@ -126,7 +92,7 @@ function (_React$Component4) {
   _createClass(IssueAdd, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault();
+      // e.preventDefault()
       var form = document.forms.issueAdd;
       var issue = {
         owner: form.owner.value,
@@ -160,8 +126,8 @@ function (_React$Component4) {
 
 var IssueList =
 /*#__PURE__*/
-function (_React$Component5) {
-  _inherits(IssueList, _React$Component5);
+function (_React$Component3) {
+  _inherits(IssueList, _React$Component3);
 
   function IssueList() {
     var _this2;
