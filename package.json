@@ -5,14 +5,16 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -w server server/server.js",
+    "start": "nodemon -w server -e js,graphql server/server.js",
     "compile": "babel src --out-dir public",
     "watch": "babel src --out-dir public --watch --verbose"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.0"
+    "apollo-server-express": "^2.6.3",
+    "express": "^4.17.0",
+    "graphql": "^0.13.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
